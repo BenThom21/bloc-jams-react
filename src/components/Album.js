@@ -46,6 +46,27 @@ class Album extends Component {
     }
   }
 
+  handleHoverOn(song) {
+    this.setState({hovered: song});
+  }
+
+  handleHoverOff(song) {
+    this.setState({hovered: null});
+    // null or empty string
+  }
+
+  btnHandler(song, index) {
+    const playBtn = <span className="ion-play"></span>;
+    const pauseBtn = <span className="ion-pause"></span>;
+    const isSameSong = this.state.currentSong === song;
+    // return pauseBtn;
+    
+    //if song is NOT playing and hovered, return playBtn
+    //if song IS playing and hovered, return pauseBtn
+    //else return index+1 for song#
+    // if ()
+  }
+     
 
   render() {
     return (
@@ -66,10 +87,9 @@ class Album extends Component {
           </colgroup>
           <tbody>
             {this.state.album.songs.map ((song, index) => 
-                //confused here
-                //but we can move this to 'song.title' to just click on the title to pause/play
-                <tr key={index} onClick={() => this.handleSongClick(song)}>
-                  <td>{index + 1}</td>
+                //where does <span></span> go? Does it replace the song #?
+                <tr key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHoverOn(song)} onMouseLeave={() => this.handleHoverOff(song)}>
+                  <td> {this.btnHandler(song, index)} </td>
                   <td>{song.title}</td>
                   <td>{song.duration}</td>
                 </tr>

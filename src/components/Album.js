@@ -64,7 +64,16 @@ class Album extends Component {
     //if song is NOT playing and hovered, return playBtn
     //if song IS playing and hovered, return pauseBtn
     //else return index+1 for song#
-    // if ()
+
+    if (this.state.isPlaying === false && this.state.hovered === song)  {
+      return playBtn;
+    } else if (this.state.isPlaying === true && this.state.hovered === song) {
+      return pauseBtn;
+    } else {
+      return (index +1);
+    }
+
+
   }
      
 
@@ -87,7 +96,6 @@ class Album extends Component {
           </colgroup>
           <tbody>
             {this.state.album.songs.map ((song, index) => 
-                //where does <span></span> go? Does it replace the song #?
                 <tr key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHoverOn(song)} onMouseLeave={() => this.handleHoverOff(song)}>
                   <td> {this.btnHandler(song, index)} </td>
                   <td>{song.title}</td>

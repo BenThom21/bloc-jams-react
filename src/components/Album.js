@@ -48,8 +48,18 @@ class Album extends Component {
   }
 
   handlePrevClick() {
+    //HELP: Can we understand this next line item-by-item?
     const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
     const newIndex = Math.max(0, currentIndex - 1);
+    const newSong = this.state.album.songs[newIndex];
+    this.setSong(newSong);
+    this.play();
+  }
+
+  handleNextClick() {
+    const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+    const newIndex = Math.min(4, currentIndex + 1);
+    // const newIndex = (currentIndex + 1);
     const newSong = this.state.album.songs[newIndex];
     this.setSong(newSong);
     this.play();
@@ -119,6 +129,7 @@ class Album extends Component {
           currentSong={this.state.currentSong} 
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
           handlePrevClick={() => this.handlePrevClick()}
+          handleNextClick={() => this.handleNextClick()}
         />
       </section>
     );

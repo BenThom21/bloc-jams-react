@@ -52,6 +52,16 @@ class Album extends Component {
     this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
    }
 
+   formatTime(t) {
+
+   }
+
+   handleVolumeChange(t) {
+     const newVolume = t.target.value;
+     this.audioElement.volume = newVolume;
+     this.setState({ volume: newVolume});
+   }
+
   setSong(song) {
     this.audioElement.src = song.audioSrc;
     this.setState({currentSong: song});
@@ -161,6 +171,7 @@ class Album extends Component {
           handlePrevClick={() => this.handlePrevClick()}
           handleNextClick={() => this.handleNextClick()}
           handleTimeChange={(e) => this.handleTimeChange(e)}
+          handleVolumeChange={(t) => this.handleVolumeChange(t)}
         />
       </section>
     );

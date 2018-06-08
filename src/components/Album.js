@@ -58,7 +58,11 @@ class Album extends Component {
     }
     const min = Math.floor(time/60);
     const seconds = Math.floor(time - min * 60);
-    return `${min}:${seconds}`
+    if (seconds < 10) {
+      return `${min}:0${seconds}`
+    } else {
+      return `${min}:${seconds}`
+    }
    }
 
   setSong(song) {
@@ -161,7 +165,7 @@ class Album extends Component {
                 <tr key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHoverOn(song)} onMouseLeave={() => this.handleHoverOff(song)}>
                   <td> {this.btnHandler(song, index)} </td>
                   <td>{song.title}</td>
-                  <td>{song.duration}</td>
+                  <td>{this.formatTime(song.duration)}</td>
                 </tr>
               )
             }

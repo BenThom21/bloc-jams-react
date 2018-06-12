@@ -41,7 +41,6 @@ class Album extends Component {
         this.setState({ duration: this.audioElement.duration});
       }
     };
-    // I do NOT understand this, either - binding to 'this', sure but the syntax? Super confusing
     this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
     this.audioElement.addEventListener('durationchange', this.eventListeners.durationchange);
   }
@@ -94,7 +93,6 @@ class Album extends Component {
   handleNextClick() {
     const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
     const newIndex = Math.min(4, currentIndex + 1);
-    // const newIndex = (currentIndex + 1);
     const newSong = this.state.album.songs[newIndex];
     this.setSong(newSong);
     this.play();

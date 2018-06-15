@@ -2,6 +2,11 @@ import React from 'react';
 
 const Landing = () => (
   <section className="library">
+  <div className="hero">
+    <form action="/library">
+      <input type="submit" value="Listen Now" />
+    </form>
+  </div>
     <h1 className="hero-title">Turn the music up!</h1>
 
     <section className="selling-points">

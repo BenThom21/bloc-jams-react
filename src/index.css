@@ -4,11 +4,28 @@ body {
   font-family: sans-serif;
 }
 
+
+/* START LANDING PAGE STYLING */
 .hero {
-  /* This starts at src folder! */
-  background-image: url("abstract-music-rock-bw.jpg");
-  height: 100%;
+  /* This starts at 'src' folder! */
+  background-image: url("rock-music-shot.jpg");
+  height: 300px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  /* centering the button in the middle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#listen {
+
+}
+
+.selling-points {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  align-content: space-around;
 }

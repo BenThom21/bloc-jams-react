@@ -3,7 +3,7 @@ import React from 'react';
 const Landing = () => (
   <section className="library">
   <div className="hero">
-    <form action="/library">
+    <form action="/library" id="listen">
       <input type="submit" value="Listen Now" />
     </form>
   </div>

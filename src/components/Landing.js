@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Landing = () => (
-  <section className="library">
+  <section className="landing">
   <div className="hero">
     <form action="/library" id="listen">
       <input type="submit" value="Listen Now" />

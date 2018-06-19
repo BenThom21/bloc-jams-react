@@ -13,7 +13,7 @@ class App extends Component {
           <nav>
             {/* <Link to='/'>Landing</Link> */}
             {/* HELP: why isn't this image showing up? */}
-            <a href='/'><img src="src/bloc_jams_logo2.png" className="leftLink"></img></a>
+            <a href='/'><img src="src/bloc_jams_logo2.png" alt="Bloc Jams Logo" className="leftLink"></img></a>
             <Link to='/library' className="rightLink">Library</Link>
           </nav>
           <h1>Bloc Jams</h1>

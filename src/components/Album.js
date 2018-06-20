@@ -15,7 +15,9 @@ class Album extends Component {
       currentSong: album.songs[0],
       currentTime: 0,
       duration: album.songs[0].duration,
-      isPlaying: false
+      isPlaying: false,
+      // adding this below (and comma above if removing)
+      currentArtist: album.artist[0]
     };
 
     this.audioElement = document.createElement('audio');
@@ -82,7 +84,6 @@ class Album extends Component {
   }
 
   handlePrevClick() {
-    //HELP: Can we understand this next line item-by-item?
     const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
     const newIndex = Math.max(0, currentIndex - 1);
     const newSong = this.state.album.songs[newIndex];
@@ -144,34 +145,20 @@ class Album extends Component {
   render() {
     return (
       <section className="album">
-        <section id="album-info">
+      <div className="container">
+        <div id="album-info">
           <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
           <div className="album-details">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
             <div id="release-info">{this.state.album.releaseInfo}</div>
           </div>
-        </section>
-        <table id="song-list">
-          <colgroup>
-            <col id="song-number-column"/>
-            <col id="song-title-column"/>
-            <col id="song-duration-column"/> 
-          </colgroup>
-          <tbody>
-            {this.state.album.songs.map ((song, index) => 
-                <tr key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHoverOn(song)} onMouseLeave={() => this.handleHoverOff(song)}>
-                  <td> {this.btnHandler(song, index)} </td>
-                  <td>{song.title}</td>
-                  <td>{this.formatTime(song.duration)}</td>
-                </tr>
-              )
-            }
-          </tbody>
-        </table>
+        </div>
         <PlayerBar 
           isPlaying={this.state.isPlaying} 
           currentSong={this.state.currentSong}
+          // adding this below
+          currentArtist={this.state.currentArtist}
           currentTime={this.audioElement.currentTime}
           duration={this.audioElement.duration}
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
@@ -181,6 +168,26 @@ class Album extends Component {
           handleVolumeChange={(t) => this.handleVolumeChange(t)}
           formatTime={(time) => this.formatTime(time)}
         />
+      </div>
+        <div className="list">
+          <table id="song-list">
+            <colgroup>
+              <col id="song-number-column"/>
+              <col id="song-title-column"/>
+              <col id="song-duration-column"/> 
+            </colgroup>
+            <tbody>
+              {this.state.album.songs.map ((song, index) => 
+                  <tr key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHoverOn(song)} onMouseLeave={() => this.handleHoverOff(song)}>
+                    <td> {this.btnHandler(song, index)} </td>
+                    <td className="song">{song.title}</td>
+                    <td>{this.formatTime(song.duration)}</td>
+                  </tr>
+                )
+              }
+            </tbody>
+          </table>
+        </div>
       </section>
     );
   }

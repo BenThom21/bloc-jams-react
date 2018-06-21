@@ -17,7 +17,7 @@ class Album extends Component {
       duration: album.songs[0].duration,
       isPlaying: false,
       // adding this below (and comma above if removing)
-      currentArtist: album.artist[0]
+      currentArtist: album.artist
     };
 
     this.audioElement = document.createElement('audio');

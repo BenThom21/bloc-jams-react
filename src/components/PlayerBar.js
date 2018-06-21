@@ -5,11 +5,11 @@ class Playerbar extends Component {
         return (
             <section className="player-bar">
                 
-                {/* HELP: This breaks EVERYTHING - trying to show currently playing title and artist */}
-                {/* <section id="current-song">
-                    <div className="song-playing">{this.props.currentSong}</div>
+                
+                <section id="current-song">
+                    <div className="song-playing">{this.props.currentSong.title}</div>
                     <div className="artist-playing">{this.props.currentArtist}</div>
-                </section> */}
+                </section>
 
                 <section id="time-control">
                     <div className="current-time">{this.props.formatTime(this.props.currentTime)}</div>

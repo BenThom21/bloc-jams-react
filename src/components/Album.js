@@ -170,6 +170,7 @@ class Album extends Component {
         />
       </div>
         <div className="list">
+          <h3>Click on a song below to play</h3>
           <table id="song-list">
             <colgroup>
               <col id="song-number-column"/>

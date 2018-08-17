@@ -11,17 +11,17 @@ const Landing = () => (
 
     <section className="selling-points">
       <div className="point">
-        <span className="icon ion-music-note"></span>
+        <i class="icon ion-md-musical-notes"></i>
         <h2 className="point-title">Choose Your Music</h2>
         <p className="point-description">The world is full of music; why should you have to listen to music that someone else chose?</p>
       </div>
       <div className="point">
-        <span className="icon ion-wifi"></span>
+        <i class="icon ion-md-wifi"></i>
         <h2 className="point-title">Unlimited Streaming, Ad-Free</h2>
         <p className="point-description">No arbitrary limits. No distractions.</p>
       </div>
       <div className="point">
-        <span className="icon ion-android-phone-portrait"></span>
+        <i class="icon ion-md-phone-portrait"></i>
         <h2 className="point-title">Mobile-Enabled</h2>
         <p className="point-description">Listen to your music on the go. This streaming service is available on all mobile platforms.</p>
       </div>

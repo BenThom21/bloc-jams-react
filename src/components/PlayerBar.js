@@ -4,8 +4,6 @@ class Playerbar extends Component {
     render() {
         return (
             <section className="player-bar">
-                
-                
                 <section id="current-song">
                     <div className="song-playing">{this.props.currentSong.title}</div>
                     <div className="artist-playing">{this.props.currentArtist}</div>
@@ -28,18 +26,18 @@ class Playerbar extends Component {
 
                 <section id="button">
                     <button id="previous" onClick={this.props.handlePrevClick}>
-                        <span className="ion-skip-backward"></span>
+                        <i class="icon ion-md-skip-backward"></i>
                     </button>
                     <button id="play-pause" onClick={this.props.handleSongClick}>
-                        <span className={this.props.isPlaying ? 'ion-pause' : 'ion-play'}></span>
+                        <i className={this.props.isPlaying ? 'ion-md-pause' : 'ion-md-play'}></i>
                     </button>
                     <button id="next" onClick={this.props.handleNextClick}>
-                        <span className="ion-skip-forward"></span>
+                        <i class="icon ion-md-skip-forward"></i>
                     </button>
                 </section>
 
                 <section id="volume-control">
-                    <div className="icon ion-volume-high"></div>
+                    <div><i class="icon ion-md-volume-up"></i></div>
                     <input 
                         type="range" 
                         className="seek-bar" 
@@ -49,8 +47,9 @@ class Playerbar extends Component {
                         step=".001"
                         onChange={this.props.handleVolumeChange} 
                     />
-                    <div className="icon ion-volume-low"></div>
+                    <i class="icon ion-md-volume-down"></i>
                 </section>
+                <script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script>
             </section>
         )
     }

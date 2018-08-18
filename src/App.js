@@ -14,7 +14,7 @@ class App extends Component {
             <a href='/'><img src="assets/images/bloc_jams_logo.png" alt="Bloc Jams Logo" className="leftLink"></img></a>
             <Link to='/library' className="rightLink">Library</Link>
           </nav>
-          <h1 className="title">Bloc Jams</h1>
+          <h1 className="title">Study Jams</h1>
         </header>
         <main>
           <Route exact path="/" component={Landing} />
